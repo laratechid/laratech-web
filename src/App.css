@@ -1,0 +1,100 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(46, 233, 255, 0.3);
+  color: #F2F5FF;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #2EE9FF;
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070A12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(46, 233, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(46, 233, 255, 0.5);
+}
+
+/* Loading state */
+body:not(.loaded) * {
+  animation-play-state: paused !important;
+}
+
+/* GPU acceleration for animated elements */
+.gpu-layer {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Section transitions */
+section {
+  position: relative;
+}
+
+/* Prevent text selection on interactive elements */
+button,
+a {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Prevent layout shift */
+img[src=""] {
+  visibility: hidden;
+}
+
+/* Responsive typography scaling */
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1536px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .noise-overlay,
+  nav,
+  .scroll-indicator {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+}
